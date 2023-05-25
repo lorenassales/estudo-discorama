@@ -1,0 +1,17 @@
+
+version: 2
+
+sources:
+  - name: erp
+    description: Source from Discorama sales database.
+    schema: dbt_sales_erp_discorama
+    tables:
+      
+      - name: staff
+        description: Chart of information about staffs.
+        columns:
+          - name: staff_id
+            description: It is a primary key from staffs's chart.
+            tests:
+              - unique
+              - not_null
