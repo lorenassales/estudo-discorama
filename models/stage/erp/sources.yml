@@ -15,3 +15,39 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: customer
+        description: Chart of information about customers.
+        columns:
+          - name: customer_id
+            description: It is a primary key from curtomers's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: address
+        description: Chart of information about address.
+        columns:
+          - name: address_id
+            description: It is a primary key from address's chart.
+            tests:
+              - unique
+              - not_null   
+
+      - name: city
+        description: Chart of information about city.
+        columns:
+          - name: city_id
+            description: It is a primary key from city's chart.
+            tests:
+              - unique
+              - not_null       
+                      
+      - name: country
+        description: Chart of information about country.
+        columns:
+          - name: country_id
+            description: It is a primary key from country's chart.
+            tests:
+              - unique
+              - not_null                
