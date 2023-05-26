@@ -104,4 +104,22 @@ sources:
             description: It is a primary key from actor's chart.
             tests:
               - unique
-              - not_null                                
+              - not_null
+
+      - name: rental
+        description: Chart of information about rental date and inventories.
+        columns:
+          - name: rental_id
+            description: It is a primary key from rental's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: payment
+        description: Chart of information about payments rental.
+        columns:
+          - name: rental_id
+            description: It is a primary key from payment's chart.
+            tests:
+              - unique
+              - not_null                                  
