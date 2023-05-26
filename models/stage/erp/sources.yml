@@ -118,7 +118,7 @@ sources:
       - name: payment
         description: Chart of information about payments rental.
         columns:
-          - name: rental_id
+          - name: payment_id
             description: It is a primary key from payment's chart.
             tests:
               - unique

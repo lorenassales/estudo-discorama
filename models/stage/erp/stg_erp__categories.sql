@@ -7,7 +7,7 @@ with
     , transforms as (
         select
             cast(category_id as int) as category_id
-            , cast(name as string) as name
+            , cast(name as string) as category_name
         from categories
     )
 select *
