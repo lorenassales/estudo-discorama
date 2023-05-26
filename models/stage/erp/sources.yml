@@ -15,3 +15,111 @@ sources:
             tests:
               - unique
               - not_null
+
+      - name: customer
+        description: Chart of information about customers.
+        columns:
+          - name: customer_id
+            description: It is a primary key from curtomers's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: address
+        description: Chart of information about address.
+        columns:
+          - name: address_id
+            description: It is a primary key from address's chart.
+            tests:
+              - unique
+              - not_null   
+
+      - name: city
+        description: Chart of information about city.
+        columns:
+          - name: city_id
+            description: It is a primary key from city's chart.
+            tests:
+              - unique
+              - not_null       
+                      
+      - name: country
+        description: Chart of information about country.
+        columns:
+          - name: country_id
+            description: It is a primary key from country's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: film
+        description: Chart of information about film.
+        columns:
+          - name: film_id
+            description: It is a primary key from film's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: inventory
+        description: Chart of information about inventory.
+        columns:
+          - name: inventory_id
+            description: It is a primary key from inventory's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: film_category
+        description: Chart about which category that film represent.
+        columns:
+          - name: film_id
+            description: It is a primary key from film_category's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: category
+        description: Chart of information about category.
+        columns:
+          - name: category_id
+            description: It is a primary key from category's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: film_actor
+        description: Chart of information about which film that actor participeted.
+        columns:
+          - name: film_id
+            description: It is a primary key from film_actor's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: actor
+        description: Chart of information about actor.
+        columns:
+          - name: actor_id
+            description: It is a primary key from actor's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: rental
+        description: Chart of information about rental date and inventories.
+        columns:
+          - name: rental_id
+            description: It is a primary key from rental's chart.
+            tests:
+              - unique
+              - not_null
+
+      - name: payment
+        description: Chart of information about payments rental.
+        columns:
+          - name: payment_id
+            description: It is a primary key from payment's chart.
+            tests:
+              - unique
+              - not_null                                  
