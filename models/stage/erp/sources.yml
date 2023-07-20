@@ -8,118 +8,118 @@ sources:
     tables:
       
       - name: staff
-        description: Chart of information about staffs.
+        description: Table of information about staffs.
         columns:
           - name: staff_id
-            description: It is a primary key from staffs's chart.
+            description: It is a primary key from staffs table.
             tests:
               - unique
               - not_null
 
       - name: customer
-        description: Chart of information about customers.
+        description: Table of information about customers.
         columns:
           - name: customer_id
-            description: It is a primary key from curtomers's chart.
+            description: It is a primary key from curtomers table.
             tests:
               - unique
               - not_null
 
       - name: address
-        description: Chart of information about address.
+        description: Table of information about address.
         columns:
           - name: address_id
-            description: It is a primary key from address's chart.
+            description: It is a primary key from address table.
             tests:
               - unique
               - not_null   
 
       - name: city
-        description: Chart of information about city.
+        description: Table of information about city.
         columns:
           - name: city_id
-            description: It is a primary key from city's chart.
+            description: It is a primary key from city table.
             tests:
               - unique
               - not_null       
                       
       - name: country
-        description: Chart of information about country.
+        description: Table of information about country.
         columns:
           - name: country_id
-            description: It is a primary key from country's chart.
+            description: It is a primary key from country table.
             tests:
               - unique
               - not_null
 
       - name: film
-        description: Chart of information about film.
+        description: Table of information about film.
         columns:
           - name: film_id
-            description: It is a primary key from film's chart.
+            description: It is a primary key from film table.
             tests:
               - unique
               - not_null
 
       - name: inventory
-        description: Chart of information about inventory.
+        description: Table of information about inventory.
         columns:
           - name: inventory_id
-            description: It is a primary key from inventory's chart.
+            description: It is a primary key from inventory table.
             tests:
               - unique
               - not_null
 
       - name: film_category
-        description: Chart about which category that film represent.
+        description: Table about which category that film represent.
         columns:
           - name: film_id
-            description: It is a primary key from film_category's chart.
+            description: It is a primary key from film_category table.
             tests:
               - unique
               - not_null
 
       - name: category
-        description: Chart of information about category.
+        description: Table of information about category.
         columns:
           - name: category_id
-            description: It is a primary key from category's chart.
+            description: It is a primary key from category table.
             tests:
               - unique
               - not_null
 
       - name: film_actor
-        description: Chart of information about which film that actor participeted.
+        description: Table of information about which film that actor participeted.
         columns:
           - name: film_id
-            description: It is a primary key from film_actor's chart.
+            description: It is a primary key from film_actor table.
             tests:
               - unique
               - not_null
 
       - name: actor
-        description: Chart of information about actor.
+        description: Table of information about actors.
         columns:
           - name: actor_id
-            description: It is a primary key from actor's chart.
+            description: It is a primary key from actor table.
             tests:
               - unique
               - not_null
 
       - name: rental
-        description: Chart of information about rental date and inventories.
+        description: Table of information about rental date and inventories.
         columns:
           - name: rental_id
-            description: It is a primary key from rental's chart.
+            description: It is a primary key from rental table.
             tests:
               - unique
               - not_null
 
       - name: payment
-        description: Chart of information about payments rental.
+        description: Table of information about payments rental.
         columns:
           - name: payment_id
-            description: It is a primary key from payment's chart.
+            description: It is a primary key from payment table.
             tests:
               - unique
-              - not_null                                  
+              - not_null                            
