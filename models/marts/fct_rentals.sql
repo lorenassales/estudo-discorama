@@ -26,14 +26,15 @@ with
 
     , fct_rentals as (
         select
-            rp.rental_id
+            rp.rental_id -- rental_id 4591: there are 5 line with this pk, because there are 5 payment_id diferents for the same customer and same film. Customer paid your rental in 5x.
             , rp.payment_id
             , c.customer_sk as customer_fk                     
             , s.staff_sk as staff_fk            
             , i.inventory_sk as inventory_fk
             , f.film_sk as film_fk            
             , rp.rental_date
-            , rp.return_date            
+            , rp.return_date
+            , rp.payment_date           
             , case
                 when qty_rental_days > max_rental_duration then "Return late"
                 when return_date is null then "Didn't return"
@@ -46,8 +47,7 @@ with
             , rp.amount
             , case
                 when amount = 0 then "Not paid"                
-                when amount >= rental_rate and return_date is null and amount < f.replacement_cost then "Missing replacement cost"
-                when qty_rental_days > max_rental_duration and amount <= rental_rate and amount <> 0 then "Missing fees"
+                when amount >= rental_rate and return_date is null and amount < f.replacement_cost then "Missing replacement cost"                
             else "Paid"
             end as payment_status            
         from int_rentals_payments rp

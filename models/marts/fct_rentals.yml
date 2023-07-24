@@ -13,8 +13,7 @@ models:
 
       - name: rental_id
         description: This is a primary key to this table.
-        tests:
-          - unique
+        tests:          
           - not_null
           
       - name: payment_id
@@ -36,7 +35,10 @@ models:
         description: It is a column with rental date for that film.
 
       - name: return_date
-        description: It is a column with return date for that film.      
+        description: It is a column with return date for that film.
+
+      - name: payment_date
+        description: It is a column with payment date for that film.     
 
       - name: return_status
         description: It is a column with return status. Return late, Didn't return and Return on time.

@@ -18,6 +18,7 @@ with
             , p.payment_id
             , r.rental_date
             , r.return_date
+            , p.payment_date
             , r.qty_rental_days
             , case
                 when p.amount is null then 0
