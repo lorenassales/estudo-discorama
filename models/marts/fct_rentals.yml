@@ -1,0 +1,62 @@
+
+version: 2
+
+models:
+  - name: fct_rentals
+    description: This is a dimension table to this project with rentals and payments registers.
+    columns:
+      - name: rental_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: rental_id
+        description: This is a primary key to this table.
+        tests:          
+          - not_null
+          
+      - name: payment_id
+        description: This is a identification code for payment.
+
+      - name: customer_fk
+        description: This is foreing key from customers table to this table.
+
+      - name: staff_fk
+        description: This is foreing key from staffs table to this table.
+
+      - name: inventory_fk
+        description: This is foreing key from inventories table to this table.
+
+      - name: film_fk
+        description: This is foreing key from films table to this table.
+
+      - name: rental_date
+        description: It is a column with rental date for that film.
+
+      - name: return_date
+        description: It is a column with return date for that film.
+
+      - name: payment_date
+        description: It is a column with payment date for that film.     
+
+      - name: return_status
+        description: It is a column with return status. Return late, Didn't return and Return on time.
+
+      - name: customer_name
+        description: It is a column with customers name.
+      
+      - name: staff_name
+        description: It is a column with staff name.
+
+      - name: title
+        description: It is a column with movie name.
+
+      - name: category_name
+        description: It is a column with category name to that movie.
+
+      - name: amount
+        description: It is a column with how much that customer paid for their rental.
+
+      - name: payment_status
+        description: It is a column with payment status. Not paid, Missing replacement cost, Missing fees and Paid.

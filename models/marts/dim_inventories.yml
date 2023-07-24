@@ -1,0 +1,27 @@
+
+version: 2
+
+models:
+  - name: dim_inventories
+    description: This is a dimension table to this project with quantity stocks for films by stores.
+    columns:
+      - name: inventory_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: inventory_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: film_id
+        description: This is a identification code for films.
+
+      - name: store_id
+        description: This is a identification code for stores.
+
+      - name: qty_stock_by_store
+        description: This column brings how many of that film that store has.

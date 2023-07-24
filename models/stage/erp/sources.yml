@@ -11,7 +11,7 @@ sources:
         description: Table of information about staffs.
         columns:
           - name: staff_id
-            description: It is a primary key from staffs table.
+            description: It is a primary key to staffs table.
             tests:
               - unique
               - not_null
@@ -20,7 +20,7 @@ sources:
         description: Table of information about customers.
         columns:
           - name: customer_id
-            description: It is a primary key from curtomers table.
+            description: It is a primary key to curtomers table.
             tests:
               - unique
               - not_null
@@ -29,7 +29,7 @@ sources:
         description: Table of information about address.
         columns:
           - name: address_id
-            description: It is a primary key from address table.
+            description: It is a primary key to address table.
             tests:
               - unique
               - not_null   
@@ -38,7 +38,7 @@ sources:
         description: Table of information about city.
         columns:
           - name: city_id
-            description: It is a primary key from city table.
+            description: It is a primary key to city table.
             tests:
               - unique
               - not_null       
@@ -47,7 +47,7 @@ sources:
         description: Table of information about country.
         columns:
           - name: country_id
-            description: It is a primary key from country table.
+            description: It is a primary key to country table.
             tests:
               - unique
               - not_null
@@ -56,7 +56,7 @@ sources:
         description: Table of information about film.
         columns:
           - name: film_id
-            description: It is a primary key from film table.
+            description: It is a primary key to film table.
             tests:
               - unique
               - not_null
@@ -65,7 +65,7 @@ sources:
         description: Table of information about inventory.
         columns:
           - name: inventory_id
-            description: It is a primary key from inventory table.
+            description: It is a primary key to inventory table.
             tests:
               - unique
               - not_null
@@ -74,7 +74,7 @@ sources:
         description: Table about which category that film represent.
         columns:
           - name: film_id
-            description: It is a primary key from film_category table.
+            description: It is a primary key to film_category table.
             tests:
               - unique
               - not_null
@@ -83,7 +83,7 @@ sources:
         description: Table of information about category.
         columns:
           - name: category_id
-            description: It is a primary key from category table.
+            description: It is a primary key to category table.
             tests:
               - unique
               - not_null
@@ -92,16 +92,20 @@ sources:
         description: Table of information about which film that actor participeted.
         columns:
           - name: film_id
-            description: It is a primary key from film_actor table.
-            tests:
-              - unique
+            description: It is a primary key to film_actor table.
+            tests:              
+              - not_null
+          
+          - name: actor_id
+            description: It is a primary key to film_actor table.
+            tests:              
               - not_null
 
       - name: actor
         description: Table of information about actors.
         columns:
           - name: actor_id
-            description: It is a primary key from actor table.
+            description: It is a primary key to actor table.
             tests:
               - unique
               - not_null
@@ -110,7 +114,7 @@ sources:
         description: Table of information about rental date and inventories.
         columns:
           - name: rental_id
-            description: It is a primary key from rental table.
+            description: It is a primary key to rental table.
             tests:
               - unique
               - not_null
@@ -119,7 +123,7 @@ sources:
         description: Table of information about payments rental.
         columns:
           - name: payment_id
-            description: It is a primary key from payment table.
+            description: It is a primary key to payment table.
             tests:
               - unique
               - not_null                            
