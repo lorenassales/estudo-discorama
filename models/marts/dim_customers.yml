@@ -1,0 +1,49 @@
+
+version: 2
+
+models:
+  - name: dim_customers
+    description: This is a dimension table to this project with customers registers.
+    columns:
+      - name: customer_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: customer_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: store_id
+        description: This is a identification code for store.
+
+      - name: address_id
+        description: This is a identification code for addresses.
+
+      - name: city_id
+        description: This is a identification code for city.
+
+      - name: country_id
+        description: This is a identification code for country.
+
+      - name: customer_name
+        description: It is a column with customers names.
+
+      - name: address
+        description: It is a column with addresses description.
+
+      - name: city
+        description: It is a column with city description.
+
+      - name: country
+        description: It is a column with country description.
+
+      - name: create_date
+        description: It is a column with customer register date.
+
+      - name: is_active
+        description: It is a column with customer status, active os inactive.  
+

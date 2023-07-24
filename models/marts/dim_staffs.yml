@@ -1,0 +1,30 @@
+
+version: 2
+
+models:
+  - name: dim_staffs
+    description: This is a dimension table to this project with staffs registers.
+    columns:
+      - name: staff_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: staff_id
+        description: This is a primary key to this table.
+        tests:
+          - unique
+          - not_null
+          
+      - name: store_id
+        description: This is a identification code for store.
+
+      - name: address_id
+        description: This is a identification code address.
+
+      - name: staff_name
+        description: It is a column with staff name.
+
+      - name: is_active
+        description: It is a column that brings if the staff is active or inactive as true or false.

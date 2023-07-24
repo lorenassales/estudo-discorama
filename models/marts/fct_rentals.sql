@@ -9,9 +9,9 @@ with
         from {{ ref('dim_staffs') }}
     )
 
-    , inventories as (
+    , dim_inventories as (
         select *
-        from {{ ref('inventories') }}
+        from {{ ref('dim_inventories') }}
     )
 
     , dim_films as (
@@ -28,36 +28,39 @@ with
         select
             rp.rental_id
             , rp.payment_id
-            , c.store_id   
             , c.customer_sk as customer_fk                     
             , s.staff_sk as staff_fk            
             , i.inventory_sk as inventory_fk
-            , f.film_sk as film_fk
-            , c.customer_name
+            , f.film_sk as film_fk            
             , rp.rental_date
-            , rp.return_date
-            , rp.qty_rental_days
-            , f.max_rental_duration
-            , c.city
-            , c.country
+            , rp.return_date            
+            , case
+                when qty_rental_days > max_rental_duration then "Return late"
+                when return_date is null then "Didn't return"
+            else "Return on time"
+            end as return_status
+            , c.customer_name                    
             , s.staff_name
             , f.title
             , f.category_name
-            , f.rating            
-            , f.rental_rate
-            , f.replacement_cost
             , rp.amount
+            , case
+                when amount = 0 then "Not paid"                
+                when amount >= rental_rate and return_date is null and amount < f.replacement_cost then "Missing replacement cost"
+                when qty_rental_days > max_rental_duration and amount <= rental_rate and amount <> 0 then "Missing fees"
+            else "Paid"
+            end as payment_status            
         from int_rentals_payments rp
         left join dim_customers c on
             rp.customer_id = c.customer_id        
         left join dim_staffs s on
             rp.staff_id = s.staff_id
-        left join inventories i on
+        left join dim_inventories i on
             rp.inventory_id = i.inventory_id
         left join dim_films f on
             i.film_id = f.film_id
     )
 select 
     {{ dbt_utils.generate_surrogate_key(['rental_id', 'payment_id']) }} as rental_sk
-    , *
+    , *    
 from fct_rentals

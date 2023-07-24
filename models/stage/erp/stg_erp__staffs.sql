@@ -10,7 +10,7 @@ with
             , cast(store_id as int) as store_id
             , cast(address_id as int) as address_id
             , cast((first_name || ' ' || last_name) as string) as staff_name
-            , cast(active as boolean) as active 
+            , cast(active as boolean) as is_active 
         from staffs
     )
 select *
