@@ -92,12 +92,12 @@ sources:
         description: Table of information about which film that actor participeted.
         columns:
           - name: film_id
-            description: It is a primary key to film_actor table.
+            description: This is a identification code for films.
             tests:              
               - not_null
           
           - name: actor_id
-            description: It is a primary key to film_actor table.
+            description: This is a identification code for actors.
             tests:              
               - not_null
 
