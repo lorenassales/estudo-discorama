@@ -14,11 +14,7 @@ models:
       - name: film_id
         description: This is a identification code for films.
         tests:
-          - not_null
-          
-      - name: actor_id
-        description: This is a identification code for films.
-        tests: 
+          - unique
           - not_null
 
       - name: actor_name

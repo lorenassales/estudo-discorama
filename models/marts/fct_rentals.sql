@@ -36,7 +36,8 @@ with
             , c.customer_sk as customer_fk                     
             , s.staff_sk as staff_fk            
             , i.inventory_sk as inventory_fk
-            , f.film_sk as film_fk            
+            , f.film_sk as film_fk
+            , fa.film_actor_sk as film_actor_fk           
             , rp.rental_date
             , rp.return_date
             , rp.payment_date           
