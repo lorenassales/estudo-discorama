@@ -19,6 +19,11 @@ with
         from {{ ref('dim_films') }}
     )
 
+    , dim_film_actors as (
+        select *
+        from {{ ref('dim_film_actors') }}
+    )
+
     , int_rentals_payments as (
         select *
         from {{ ref('int_rentals_payments') }}
@@ -59,6 +64,8 @@ with
             rp.inventory_id = i.inventory_id
         left join dim_films f on
             i.film_id = f.film_id
+        left join dim_film_actors fa on
+            i.film_id = fa.film_id
     )
 select 
     {{ dbt_utils.generate_surrogate_key(['rental_id', 'payment_id']) }} as rental_sk

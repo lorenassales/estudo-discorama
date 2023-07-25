@@ -1,0 +1,25 @@
+
+version: 2
+
+models:
+  - name: dim_film_actors
+    description: This is a dimension table to this project with actors and which movie they participated.
+    columns:
+      - name: film_actor_sk
+        description: This is a surrogate key to this table.
+        tests:
+          - unique
+          - not_null
+
+      - name: film_id
+        description: This is a identification code for films.
+        tests:
+          - not_null
+          
+      - name: actor_id
+        description: This is a identification code for films.
+        tests: 
+          - not_null
+
+      - name: actor_name
+        description: It is a column with actors name.
