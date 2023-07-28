@@ -7,7 +7,7 @@ with
     general_payments as (
         select
             sum(amount) as total_payment
-        from {{ ref('fct_rentals') }}        
+        from {{ ref('fct_payments') }}        
     )
 select total_payment
 from general_payments

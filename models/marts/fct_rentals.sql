@@ -44,6 +44,7 @@ with
             , case
                 when qty_rental_days > max_rental_duration then "Return late"
                 when return_date is null then "Didn't return"
+                when qty_rental_days < max_rental_duration then "Return earlier"
             else "Return on time"
             end as return_status
             , c.customer_name                    
