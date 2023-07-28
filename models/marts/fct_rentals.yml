@@ -31,6 +31,9 @@ models:
       - name: film_fk
         description: This is foreing key from films table to this table.
 
+      - name: film_actor_fk
+        description: This is foreing key from film actors table to this table.
+
       - name: rental_date
         description: It is a column with rental date for that film.
 
